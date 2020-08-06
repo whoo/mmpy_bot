@@ -136,6 +136,9 @@ class MessageDispatcher(object):
                 self._on_new_message(self.event)
 
     def _default_reply(self, msg):
+        if settings.DEFAULT_REPLY == "":
+	    return None
+
         if settings.DEFAULT_REPLY:
             return self._client.channel_msg(
                 msg['data']['post']['channel_id'], settings.DEFAULT_REPLY)
