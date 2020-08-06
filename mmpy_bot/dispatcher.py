@@ -137,7 +137,7 @@ class MessageDispatcher(object):
 
     def _default_reply(self, msg):
         if settings.DEFAULT_REPLY == "":
-	    return None
+            return None
 
         if settings.DEFAULT_REPLY:
             return self._client.channel_msg(
